@@ -16,18 +16,18 @@ So that I know what's my best seller,
 I'd like an app to retrive the most sold item.
 
 As a marketer,
-So that I can understand,
-I'd like an app to retrive the total spend of a given customer.
+So that I can see how much a given customer has spent,
+I'd like an app to retrieve the total spend of this customer.
 
 As a marketer,
 So that I can reward my most loyal customer,
-I'd like an app to retrive their name.
+I'd like an app to retrieve their name.
 ```
 
 ## Download and run project
 
 ```
-$ git clone git@github.com:ChocolatineMathou/api_query.git
+$ git clone git@github.com/ChocolatineMathou/api_query.git
 $ cd api-query
 $ bundle install
 ```
