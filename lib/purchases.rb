@@ -11,7 +11,7 @@ class Purchases
   def most_sold
     @items.map { |purchase| purchase['item'] }
     most_sold = item_frequency.max_by { |_key, value| value }
-    most_sold[0]
+    p most_sold[0]
   end
 
   private
