@@ -10,5 +10,5 @@ when 'most_sold'
 when 'total_spend'
   p users.total_spend(ARGV[1])
 else
-  p 'I did not understand your question'
+  p 'I did not understand your question.'
 end
