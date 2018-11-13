@@ -24,7 +24,7 @@ class Users
     all_user_id.map do |id|
       loyalty[id] += 1
     end
-    sorted_loyal_user = loyalty.max_by { |key, value| key }
+    sorted_loyal_user = loyalty.max_by { |key, _value| key }
     user_id = sorted_loyal_user[0]
     find_user('id', user_id, 'email')
   end
