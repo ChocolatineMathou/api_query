@@ -1,5 +1,6 @@
 # API query - Tech Test
 
+[![Build Status](https://travis-ci.org/ChocolatineMathou/api_query.svg?branch=master)](https://travis-ci.org/ChocolatineMathou/api_query)
 
 ## Intro
 
