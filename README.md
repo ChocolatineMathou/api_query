@@ -11,7 +11,17 @@ Rubocop and SimpleCov were used from the beginning to improve the syntax and get
 ## User stories
 
 ```
-As a user...
+As a marketer,
+So that I know what's my best seller,
+I'd like an app to retrive the most sold item.
+
+As a marketer,
+So that I can understand,
+I'd like an app to retrive the total spend of a given customer.
+
+As a marketer,
+So that I can reward my most loyal customer,
+I'd like an app to retrive their name.
 ```
 
 ## Download and run project
@@ -23,17 +33,24 @@ $ bundle install
 ```
 
 Tests can be run using RSpec from the root of the project directory.  
-Test coverage is [PERCENTAGE TO BE ADDED], with [NUMBER TO BE ADDED] styling offense.
+Test coverage is 98.29%. I didn't test the HTTP request in the API object, this is why I couldn't reach 100% coverage. However, there is no styling offense.
 
 ```
 $ rspec / # To run the tests (include test coverage)
 $ rubocop / # To inspect the syntax
 ```
 
-You can interact with this project in your favourite REPL, like Pry, as follows:   
+You can interact with this project in your favourite REPL as follows:   
 
 ```
-INTERACTION
+$ ruby app.rb most_sold
+"Heavy Duty Concrete Watch"
+$ ruby app.rb total_spend schimmel_quincy@ernser.io
+245.01
+$ ruby app.rb most_loyal
+"jack_lakin@rodriguezschuppe.io"
+$ ruby app.rb hello_world
+"I did not understand your question."
 ```
 
 ## Approach
@@ -41,6 +58,10 @@ INTERACTION
 I started to explore the given API and draw a diagram to get an idea of the domain model and the interactions the user will have.  
 I finally used three different classes - API, Purchases and Users - as they don't have the same responsabilities. API is in charge of retrieving information from the API, Purchases has all the purchases-related logic while Users has the users-related logic.   
 Moreover, I choose to integrate Travis CI to make sure the codebase could be used without breaking in a clean environment.
+
+## Areas of improvement
+
+With more time, there are methods I would like to refactor. Also I would like to improve this project to cover some edge cases such as 'email not provided' for the 'total spend' method.
 
 ## Specification
 
