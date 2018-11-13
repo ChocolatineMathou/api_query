@@ -8,7 +8,11 @@ describe 'app' do
   it 'returns the total spend for a given email' do
     total_spend = `ruby app.rb total_spend schimmel_quincy@ernser.io`
     expect(total_spend).to eq("245.01\n")
+  end
 
+  it 'returns the email of the most loyal customer' do
+    most_loyal = `ruby app.rb most_loyal`
+    expect(most_loyal).to eq("\"jack_lakin@rodriguezschuppe.io\"\n")
   end
 
   it 'returns a nice sentence if the program does not understand the command' do

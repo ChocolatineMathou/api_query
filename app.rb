@@ -9,6 +9,8 @@ when 'most_sold'
   p purchases.most_sold
 when 'total_spend'
   p users.total_spend(ARGV[1])
+when 'most_loyal'
+  p users.most_loyal
 else
   p 'I did not understand your question.'
 end

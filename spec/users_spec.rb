@@ -24,4 +24,21 @@ describe Users do
       expect(subject.total_spend('schimmel_quincy@ernser.io')).to eq(245.01)
     end
   end
+
+  describe '#most_loyal' do
+
+    before do
+      allow(api).to receive(:fetch_data).with('users').and_return(mock_users)
+      allow(api).to receive(:fetch_data).with('purchases').and_return(mock_purchases)
+    end
+
+    it 'calls most_loyal' do
+      allow(subject).to receive(:most_loyal)
+      subject.most_loyal
+    end
+
+    it 'retrieves the most loyal user' do
+      expect(subject.most_loyal).to eq('jack_lakin@rodriguezschuppe.io')
+    end
+  end
 end
