@@ -10,9 +10,14 @@ describe 'app' do
     expect(total_spend).to eq("245.01\n")
   end
 
+  it 'gives an error message if email not provided' do
+    total_spend = `ruby app.rb total_spend`
+    expect(total_spend).to eq("\"Email not provided\"\n")
+  end
+
   it 'returns the email of the most loyal customer' do
     most_loyal = `ruby app.rb most_loyal`
-    expect(most_loyal).to eq("\"jack_lakin@rodriguezschuppe.io\"\n")
+    expect(most_loyal).to eq("\"travis_kshlerin@wunsch.net\"\n")
   end
 
   it 'returns a nice sentence if the program does not understand the command' do
