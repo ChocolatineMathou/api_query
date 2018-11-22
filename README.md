@@ -49,6 +49,10 @@ $ ruby app.rb total_spend schimmel_quincy@ernser.io
 245.01
 $ ruby app.rb most_loyal
 "jack_lakin@rodriguezschuppe.io"
+$ ruby app.rb total_spend mathilde@email.com                                                                                                               (master)
+#<RuntimeError: User does not exist>
+$ ruby app.rb total_spend
+"Email not provided"
 $ ruby app.rb hello_world
 "I did not understand your question."
 ```
@@ -57,11 +61,8 @@ $ ruby app.rb hello_world
 
 I started to explore the given API and draw a diagram to get an idea of the domain model and the interactions the user will have.  
 I finally used three different classes - API, Purchases and Users - as they don't have the same responsabilities. API is in charge of retrieving information from the API, Purchases has all the purchases-related logic while Users has the users-related logic.   
-Moreover, I choose to integrate Travis CI to make sure the codebase could be used without breaking in a clean environment.
-
-## Areas of improvement
-
-With more time, there are methods I would like to refactor. Also I would like to improve this project to cover some edge cases such as 'email not provided' for the 'total spend' method.
+Moreover, I choose to integrate Travis CI to make sure the codebase could be used without breaking in a clean environment.   
+During my pairing session with the company, I've been able to refactor the codebase using a helper (frequency_map method) and memoization, and create unit tests for the App class.
 
 ## Specification
 
