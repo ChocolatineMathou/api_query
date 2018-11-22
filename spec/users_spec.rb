@@ -23,6 +23,10 @@ describe Users do
     it 'retrieves the total spend for a given email' do
       expect(subject.total_spend('schimmel_quincy@ernser.io')).to eq(245.01)
     end
+
+    it "raises an error message if user does not exist" do
+      expect { subject.total_spend('dummy@email.com') }.to raise_error("User does not exist")
+    end
   end
 
   describe '#most_loyal' do
@@ -38,7 +42,7 @@ describe Users do
     end
 
     it 'retrieves the most loyal user' do
-      expect(subject.most_loyal).to eq('jack_lakin@rodriguezschuppe.io')
+      expect(subject.most_loyal).to eq('travis_kshlerin@wunsch.net')
     end
   end
 end
