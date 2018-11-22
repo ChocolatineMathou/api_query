@@ -4,7 +4,7 @@ describe App do
 
   subject { described_class.new(purchases, users) }
   let(:purchases) { double :purchases, most_sold: 'An item' }
-  let(:users) { double :users, total_spend: 92, most_loyal: 'A user'}
+  let(:users) { double :users, total_spend: 92, most_loyal: 'A user' }
 
   it 'calls run with a random question' do
     expect { subject.run('Just a random question') }.to output("\"I did not understand your question.\"\n").to_stdout

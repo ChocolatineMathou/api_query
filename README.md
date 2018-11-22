@@ -33,7 +33,7 @@ $ bundle install
 ```
 
 Tests can be run using RSpec from the root of the project directory.  
-Test coverage is 98.29%. I didn't test the HTTP request in the API object, this is why I couldn't reach 100% coverage. However, there is no styling offense.
+Test coverage is 98.14%. I didn't test the HTTP request in the API object, this is why I couldn't reach 100% coverage. However, there is no styling offense.
 
 ```
 $ rspec / # To run the tests (include test coverage)

@@ -22,6 +22,10 @@ class App
   end
 end
 
-if __FILE__ == $0
-  App.new.run(ARGV[0], ARGV[1])
+if $0 == __FILE__
+  begin
+    App.new.run(ARGV[0], ARGV[1])
+  rescue => error
+    p error
+  end
 end

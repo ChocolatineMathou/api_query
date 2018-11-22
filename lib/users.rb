@@ -10,6 +10,7 @@ class Users
   def total_spend(email)
     user_id = find_user('email', email, 'id')
     raise "User does not exist" if user_id.nil?
+    
     expense = 0
     purchases.each do |purchase|
       expense += purchase['spend'].to_f if purchase['user_id'] == user_id
