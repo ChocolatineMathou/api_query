@@ -1,16 +1,27 @@
 require './lib/purchases'
 require './lib/users'
 
-purchases = Purchases.new
-users = Users.new
+class App
 
-case ARGV[0]
-when 'most_sold'
-  p purchases.most_sold
-when 'total_spend'
-  p users.total_spend(ARGV[1])
-when 'most_loyal'
-  p users.most_loyal
-else
-  p 'I did not understand your question.'
+  def initialize(purchases = Purchases.new, users = Users.new)
+    @purchases = purchases
+    @users = users
+  end
+
+  def run(question, argument = nil)
+    case question
+    when 'most_sold'
+      p @purchases.most_sold
+    when 'total_spend'
+      p argument.nil? ? "Email not provided" : @users.total_spend(argument)
+    when 'most_loyal'
+      p @users.most_loyal
+    else
+      p 'I did not understand your question.'
+    end
+  end
+end
+
+if __FILE__ == $0
+  App.new.run(ARGV[0], ARGV[1])
 end
